@@ -16,6 +16,7 @@
     <% @albums.each do |album| %>
       <tr>
         <td><%= album.name %></td>
+        <td><%= image_tag(album.cover_url width: '10%') if album.cover.present? %></td>
         <td><%= album.genre.name %></td>
         <td><%= album.artist.name %></td>
         <td><%= link_to 'Show', album %></td>
