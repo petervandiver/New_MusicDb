@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+gem 'activeadmin', github: 'activeadmin'
+
 gem 'devise'
 
 gem 'will_paginate-bootstrap'
