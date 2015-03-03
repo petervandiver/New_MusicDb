@@ -8,8 +8,12 @@ Rails.application.routes.draw do
 
   get '/static_pages' => 'static_pages#home', as: 'static_pages'
   
-  devise_for :users
-  
+  get '/welcome' => 'static_pages#welcome', as: 'welcome'
+
+  devise_for :users, controllers: {
+    registrations: 'user/registrations'
+  }
+
   resources :songs
 
   resources :albums
