@@ -1,5 +1,11 @@
 source 'https://rubygems.org'
 
+
+
+gem 'will_paginate-bootstrap'
+
+gem 'will_paginate', '~> 3.0.6'
+
 gem 'bootstrap_form'
  
 gem 'bootstrap-sass'
