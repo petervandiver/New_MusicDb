@@ -1,21 +1,31 @@
 class SongsController < ApplicationController
   before_action :set_song, only: [:show, :edit, :update, :destroy]
 
+  include SongsHelper
   # GET /songs
   # GET /songs.json
   def index
-    @songs = Song.all
+    
+    if params[:query]
+     @songs = Song.where(song: params[:query].titleize)
+    else
+     @songs = Song.all
     @genres = Genre.all
     @artists = Artist.all
     @albums = Album.all
+    
+    end
   end
 
   # GET /songs/1
   # GET /songs/1.json
   def show
+    songs_and_tracks
+
     @genres = Genre.all
     @artists = Artist.all
     @albums = Album.all
+
   end
 
   # GET /songs/new
@@ -76,7 +86,7 @@ class SongsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_song
-      @song = Song.find(params[:id])
+      @song = Song.friendly.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

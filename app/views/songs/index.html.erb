@@ -1,3 +1,13 @@
+<h1>Search</h1>
+
+<div>
+  <%= form_tag("/songs", method: "get") do %>
+  <%= label_tag(:query, "Song:") %>
+  <%= text_field_tag(:query) %>
+  <%= submit_tag("Find by Song Name") %>
+  <% end %>
+</div>
+
 <p id="notice"><%= notice %></p>
 
 <h1>Listing Songs</h1>

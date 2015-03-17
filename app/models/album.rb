@@ -6,4 +6,7 @@ class Album < ActiveRecord::Base
 
 	mount_uploader :cover, CoverUploader
 
+	extend FriendlyId
+  friendly_id :name, use: :slugged
+
 end

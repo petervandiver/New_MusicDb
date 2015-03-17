@@ -16,6 +16,8 @@ Rails.application.routes.draw do
     registrations: 'user/registrations'
   }
 
+  
+
   resources :songs
 
   resources :albums
